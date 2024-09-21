@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    line-height: normal;
+  }
+
+   /*// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900 */
+
+/* .montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+   */
+  :root {
+    /* fonts */
+    --font-montserrat: Montserrat;
+    --font-apoc-normal-trial: Apoc-Revelations-Trial-Light;
+  
+
+  /* font sizes */
+   /* --font-size: min(max(16px, 4vw), 22px);; */
+
+
+
+    /* Colors */
+    --natural: #f0efea;
+    --black: #19191e;
+    --color-black: #000;
+    --naranja-fuerte: #f42d1f;
+    --color-white: #fff;
+    --bordo-sangre: #880c1b;
+  }
