@@ -149,7 +149,7 @@ body {
 
 .caratula-photo {
   width: 100%;
-  display: block;
+  display: flex;
   border-bottom-color: #000;
   border-bottom-width: 1px;
 }
@@ -795,18 +795,55 @@ body {
 }
 
 
+
+#prev-slide {
+  background-size: contain;
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block; 
+  position: absolute;
+  top: 417px;
+  left: 319px;
+}
+
+.img-boton {
+  border: #000 1px solid;
+}
+
+#next-slide {
+  background-size: contain;
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block; 
+  position: absolute;
+  top: 417px;
+  left: 319px;
+}
+
+.img-boton {
+  border: #000 1px 1px 0px 1px solid;
+}
+
 /* MEDIA QERYS  MEDIA QERYS  MEDIA QERYS  MEDIA QERYS  */
 
 /* Styles for mobile and tablets */
 @media only screen and (max-width: 1023px) {
   
   #next-slide {
-    position:absolute; top:380px; left:215px; 
-  }
+    position: absolute;
+    top: 318px;
+    left: 219px;  }
 
   #prev-slide {
-    position:absolute; top:380px; left:223px;
-  }
+    position: absolute;
+    top: 318px;
+    left: 219px;  }
 
   .slider-wrapper .image-list {
     gap: 0px;
@@ -816,5 +853,44 @@ body {
   .slider-wrapper .image-list .image-item {
     width: 18.75rem;
     height: 25rem;
+  }
+  .menu {
+    display: flex;
+    align-items: end;
+    height: 3.125rem;
+    padding: 0;
+    margin: 0 20px 0 20px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .slider-wrapper .image-list {
+    display: flex;
+    flex-direction: column;
+    scroll-snap-type: none;
+    gap: 0px; /* Puedes ajustar este valor para agregar espacio entre las tarjetas */
+  }
+  
+  .card {
+    width: auto; /* Asegúrate de que cada tarjeta ocupe todo el ancho disponible */
+  }
+  .slider-wrapper .image-list .image-item {
+    width: 100%; /* Asegúrate de que cada tarjeta ocupe todo el ancho disponible */
+    height: 100%; 
+
+}
+}
+
+
+@media only screen and (max-width: 430px) {
+  
+  #next-slide {
+    display: none;  }
+
+  #prev-slide {
+    display: none;  }
+
+  img-boton {
+    display: none;
   }
 }
