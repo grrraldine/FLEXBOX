@@ -868,19 +868,18 @@ body {
     display: flex;
     flex-direction: column;
     scroll-snap-type: none;
-    gap: 0px; /* Puedes ajustar este valor para agregar espacio entre las tarjetas */
+    gap: 0px; 
   }
   
   .card {
-    width: auto; /* Asegúrate de que cada tarjeta ocupe todo el ancho disponible */
+    width: auto;
   }
   .slider-wrapper .image-list .image-item {
-    width: 100%; /* Asegúrate de que cada tarjeta ocupe todo el ancho disponible */
+    width: 100%; 
     height: 100%; 
 
 }
 }
-
 
 @media only screen and (max-width: 430px) {
   
