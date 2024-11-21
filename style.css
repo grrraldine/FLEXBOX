@@ -471,7 +471,7 @@ body {
 
 .caja-texto-carousel {
   border-bottom: 1px solid #000;
-  padding: 0rem calc(25vw - 10rem);
+  padding-left: 2rem;
 }
 
 .texto-carousel {
@@ -774,7 +774,7 @@ body {
 
 @media (max-width: 768px) {
   .footer {
-    padding: calc(4rem + 1vw) 0rem; /* Reduce el padding para móvil */
+    padding: calc(4rem + 1vw) 0rem; 
   }
 
   .caja-texto-footer {
