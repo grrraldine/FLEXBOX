@@ -938,3 +938,11 @@ body {
 .skiptranslate {
     display: none;
 }
+
+
+/* @media (max-width: 768px) {
+  .submenu-content {
+    width: 100vw;
+  height: 100vw;  }
+}
+ */
