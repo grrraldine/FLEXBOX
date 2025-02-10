@@ -307,8 +307,8 @@ html {
   transform: translateY(100%);
   width: 100%;
   border-color: var(--bordo_sangre, #880C1B);
-  border-right-style: solid;
-  border-width: 110px;
+/*   border-right-style: solid;
+  border-width: 110px; */
   box-sizing: content-box;
  /*   object-fit:scale-down;
  */
@@ -327,7 +327,6 @@ html {
 .caja-link {
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
 }
 
 .caja-link-a {
@@ -341,6 +340,7 @@ html {
 /*  flex-wrap: wrap;
  */
 }
+
 
 
 .caja-flecha {
