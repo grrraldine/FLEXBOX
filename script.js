@@ -1,58 +1,91 @@
 const initSlider = () => {
     const imageList = document.querySelector(".slider-wrapper .image-list");
     const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
-    const sliderScrollbar = document.querySelector(".container .slider-scrollbar");
-    const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
-    const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
-        
-    // Handle scrollbar thumb drag
-    scrollbarThumb.addEventListener("mousedown", (e) => {
-        const startX = e.clientX;
-        const thumbPosition = scrollbarThumb.offsetLeft;
-        const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
-        
-        // Update thumb position on mouse move
-        const handleMouseMove = (e) => {
-            const deltaX = e.clientX - startX;
-            const newThumbPosition = thumbPosition + deltaX;
+    let images = [...imageList.children]; // Lista de imágenes originales
+    const slideWidth = images[0].clientWidth;
+    let isTransitioning = false; // Bloquea acciones mientras se ajusta el scroll
 
-            // Ensure the scrollbar thumb stays within bounds
-            const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
-            const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
-            
-            scrollbarThumb.style.left = `${boundedPosition}px`;
-            imageList.scrollLeft = scrollPosition;
+    // Función para clonar siempre las 5 tarjetas al final
+    const checkAndCloneImages = () => {
+        const scrollThreshold = imageList.scrollWidth - imageList.clientWidth - slideWidth * 2;
+
+        if (imageList.scrollLeft >= scrollThreshold) {
+            // Clonamos las 5 imágenes al final
+            const clones = images.slice(0, 5).map(img => img.cloneNode(true));
+            clones.forEach(clone => {
+                imageList.appendChild(clone);
+            });
+
+            // Volvemos a capturar la lista de imágenes y botones de flecha
+            images = [...imageList.children];
+
+            // Asignamos eventos a los botones de las nuevas tarjetas
+            updateSlideButtons();
         }
+    };
 
-        // Add event listeners for drag interaction
-        document.addEventListener("mousemove", handleMouseMove);
-        document.addEventListener("mouseup", handleMouseUp);
-    });
+    // Función para mover el slider
+    const moveSlide = () => {
+        if (isTransitioning) return;
 
+        isTransitioning = true;
+        const scrollAmount = slideWidth;
 
-    // Slide images according to the slide button clicks
-    slideButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            const direction = button.id === "prev-slide" ? -1 : 1;
-            const scrollAmount = imageList.clientWidth * direction;
-            imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+
+        setTimeout(() => {
+            checkAndCloneImages(); // Clonamos más imágenes si es necesario
+            isTransitioning = false;
+        }, 300);
+    };
+
+    // Función para asignar eventos a las flechas de TODAS las tarjetas
+    const updateSlideButtons = () => {
+        const allSlideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
+        allSlideButtons.forEach(button => {
+            button.removeEventListener("click", moveSlide); // Evitar duplicados
+            button.addEventListener("click", moveSlide);
         });
+    };
+
+    // Iniciar eventos de los botones al cargar
+    updateSlideButtons();
+
+    // Ajustar el ancho del slider cuando cambia el tamaño de la pantalla
+    window.addEventListener("resize", () => {
+        const newSlideWidth = images[0].clientWidth;
+        imageList.scrollLeft = newSlideWidth;
     });
+};
 
-    // Update scrollbar thumb position based on image scroll
-    const updateScrollThumbPosition = () => {
-        const scrollPosition = imageList.scrollLeft;
-        const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
-        scrollbarThumb.style.left = `${thumbPosition}px`;
-    }
+window.addEventListener("load", initSlider);
 
 
-    // Call these two functions when image list scrolls
-    imageList.addEventListener("scroll", () => {
-        updateScrollThumbPosition();
-        handleSlideButtons();
-    });
+// Inicialización de Google Translate
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: 'es' }, 'google_translate_element');
 }
 
-window.addEventListener("resize", initSlider);
-window.addEventListener("load", initSlider);
+// Función para alternar el idioma
+function toggleLanguageDesktop() {
+    const select = document.querySelector("select.goog-te-combo");
+    const button = document.getElementById("language-toggle"); // Botón principal
+    const submenuItem = document.querySelector("#sexto a"); // Opción del submenú
+
+    if (select) {
+        if (select.value === 'en') {
+            select.value = 'es';
+            button.innerText = 'ES';
+            submenuItem.innerText = 'EN';
+        } else {
+            select.value = 'en';
+            button.innerText = 'EN';
+            submenuItem.innerText = 'ES';
+        }
+        select.dispatchEvent(new Event("change"));
+
+        setTimeout(() => {
+            select.dispatchEvent(new Event("change"));
+        }, 100);
+    }
+}

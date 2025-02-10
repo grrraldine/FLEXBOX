@@ -724,6 +724,20 @@ html {
   .par5 {
     padding: inherit;
   }
+  
+}
+
+@media (max-width: 1100px) {
+  .encabezado-productos {
+    padding: 1rem;
+  }
+}
+.encabezado-productos {
+  display: flex;
+  align-items: center;
+  height: 3.125rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #000;
 }
 
 @media (max-width: 750px) {

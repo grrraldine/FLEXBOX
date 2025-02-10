@@ -253,6 +253,12 @@ body {
   align-items: center;
   width: 100%;
   object-fit: scale-down;
+  color: var(--Black, #19191E);
+  font-family: Apoc-Normal-Trial;
+  font-size: 4.375rem;
+  font-style: normal;
+  font-weight: 300;
+  font-size: calc(1.5rem + 3vw);
 }
 
 
@@ -805,7 +811,7 @@ body {
   cursor: pointer;
   display: inline-block; 
   position: absolute;
-  top: 417px;
+  top: 418px;
   left: 319px;
 }
 
@@ -822,7 +828,7 @@ body {
   cursor: pointer;
   display: inline-block; 
   position: absolute;
-  top: 417px;
+  top: 418px;
   left: 319px;
 }
 
@@ -892,4 +898,43 @@ body {
   img-boton {
     display: none;
   }
+}
+  /* Oculta el cuadro de entrada de Google Translate y la barra superior */
+/* Oculta la barra superior y los elementos adicionales de Google Translate */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-menu-frame.skiptranslate,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.vi,
+#goog-gt-vt,
+.VIpgJd-yAWNEb-hvhgNd,
+.VIpgJd-yAWNEb-hvhgNd-N7Eqid,
+.VIpgJd-yAWNEb-hvhgNd-UTujCb,
+.VIpgJd-yAWNEb-hvhgNd-bgm6sf,
+.goog-tooltip,
+.goog-te-spinner-pos,
+#goog-gt-votingHiddenPane,
+.goog-te-combo {
+    display: none !important;
+}
+
+/* Elimina cualquier margen superior que pudiera agregar la barra de Google Translate */
+body {
+    top: 0 !important;
+}
+#goog-gt-vt {
+    display: none !important;
+}
+
+.VIpgJd-ZVi9od-l4eHX-hSRGPd, /* Oculta el logotipo de Google */
+.VIpgJd-ZVi9od-ORHb-bN97Pc, /* Oculta los textos "Traducir" y "Ver esta página en:" */
+.VIpgJd-ZVi9od-LgbsSe, /* Oculta el botón de Opciones */
+#options, /* Oculta el contenedor de opciones */
+#goog-gt-votingHiddenPane, /* Oculta el panel de votación */
+#goog-gt-votingForm { /* Oculta el formulario de votación */
+    display: none !important;
+}
+
+.skiptranslate {
+    display: none;
 }

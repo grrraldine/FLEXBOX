@@ -8,8 +8,8 @@
         <link rel="stylesheet" href="global.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="icon" href="assets/img/logo.svg" sizes="32X16" type="image/png">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <script src="script.js" defer></script>
     </head>
 
     <body>
@@ -30,12 +30,13 @@
                             </ul>
                         </li>
                         <div>
-                            <li class="submenu">
-                                <a href="language">ES</a>
+                            <li class="submenu"> 
+                                <a href="#" id="language-toggle" onclick="toggleLanguageDesktop()">ES</a>
                                 <ul class="submenu-content">
-                                    <li id="sexto"><a href="#">EN</a></li>
+                                    <li id="sexto"><a href="#" onclick="toggleLanguageDesktop()">EN</a></li>
                                 </ul>
                             </li>
+                            
                             <img src="assets/icons/es.svg" class="arrow-chica">
                         </div>
                     </ul>
@@ -95,7 +96,11 @@
 
         <!--SECTION VIDEO-->
         <section class="video-responsive">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/GCGesFZFjX0?si=8d2X0mRrdzSMP63I&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
+<!--             <iframe width="560" height="315" src="https://www.youtube.com/embed/GCGesFZFjX0?si=8d2X0mRrdzSMP63I&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
+ -->        
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/47jO4HwszS4?si=6xWgW-SvdjJatvax" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
         </section>
 
         <!--SUBTITULO-->
@@ -180,7 +185,7 @@
                             5. Desde cero </h3>
                         <div class="image-content">
                             <img class="image-item" src="assets/img/desde-cero.png" alt="img-1" />
-                            <button id="prev-slide" class="slide-button material-symbols-rounded">
+                            <button id="next-slide" class="slide-button material-symbols-rounded">
                                 <img src="assets/img/arrow-lila.svg" alt="chevron left" class="img-boton"/>
                             </button>
                             
@@ -228,10 +233,22 @@
                 </div>
             </div>    
             <div class="social-icons">
-                <img class="wa" src="assets/icons/wa-logo.svg"/>
-                <img class="ig" src="assets/icons/instagram.svg"/>
+                <a href="https://wa.me/+34611897108" target="_blank">
+                    <img class="wa" src="assets/icons/wa-logo.svg"/>
+                </a>
+                <a href="https://www.instagram.com/servicio___/" target="_blank">
+                    <img class="ig" src="assets/icons/instagram.svg"/>
+                </a>
             </div>
         </footer>
+
+ <!-- Google Translate class="btn-consulta cta-button"-->
+ <div id="google_translate_element" style="display: none;"></div>
+ <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+ <!-- Google Translate class="btn-consulta cta-button"-->
+
+
+        <script src="script.js" defer></script>
 
 
     </body>
