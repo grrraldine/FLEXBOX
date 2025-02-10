@@ -308,8 +308,8 @@ html {
   transform: translateY(100%);
   width: 100%;
   border-color: #5B208A;
-  border-right-style: solid;
-  border-width: 170px;
+ /*  border-right-style: solid;
+  border-width: 170px; */
   box-sizing: content-box;
  /*   object-fit:scale-down;
  */

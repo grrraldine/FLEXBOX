@@ -207,8 +207,8 @@ color:#000;
   position: absolute;
   transform: translateY(100%);
   width: 100%;
-  border-color: #0A8765;
-  border-right-style: solid;
+  /* border-color: #0A8765;
+  border-right-style: solid; */
   border-width: 130px;
   box-sizing: content-box;
  /*   object-fit:scale-down;

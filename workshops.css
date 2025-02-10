@@ -309,8 +309,8 @@ html {
   position: absolute;
   transform: translateY(100%);
   width: 100%;
-  border-color: #01563F;
-  border-right-style: solid;
+/*   border-color: #01563F;
+  border-right-style: solid; */
   border-width: 1900px;
   box-sizing: content-box;
  /*   object-fit:scale-down;
