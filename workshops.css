@@ -15,6 +15,7 @@ body {
     font-size: var(--font-size-base);
     color: var(--color-yellowgreen);
     font-family: var(--font-montserrat);
+    overflow-x: hidden;
 }
   
 body { 
