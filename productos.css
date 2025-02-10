@@ -327,6 +327,7 @@ html {
 .caja-link {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .caja-link-a {
