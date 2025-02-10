@@ -948,3 +948,11 @@ body {
   height: 100vw;  }
 }
  */
+
+ @media (max-width: 768px) {
+  .aboutme-container {
+      flex-direction: column-reverse;
+      align-items: center;
+      width: 100%;
+  }
+}
